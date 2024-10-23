@@ -1,39 +1,57 @@
 // src/components/SuccessStories.js
 import React, { useEffect, useState } from 'react';
-import { fetchSuccessStories } from '../services/api';
 
 const SuccessStories = () => {
     const [stories, setStories] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getSuccessStories = async () => {
             try {
-                const response = await fetchSuccessStories();
-                setStories(response.data);
+                const response = await fetch('http://127.0.0.1:8000/success-stories-view/');
+                
+                // Controlla che la risposta sia OK (status code 200)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json(); // Converti la risposta in JSON
+                console.log('API Response:', data); // Log della risposta per debug
+
+                setStories(data); // Imposta i dati delle storie di successo
             } catch (error) {
                 console.error("Error fetching success stories:", error);
+                setError('Failed to fetch success stories');
             }
         };
 
         getSuccessStories();
     }, []);
 
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!Array.isArray(stories)) {
+        return <div>No success stories available.</div>;
+    }
+
     return (
         <div>
-            <h2>Storie di Successo</h2>
+            <h2>Success Stories</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Nome Progetto</th>
-                        <th>Cliente</th>
-                        <th>Settore</th>
+                        <th>Project Name</th>
+                        <th>Client Name</th>
+                        <th>Industry</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {stories.map(story => (
-                        <tr key={story.id}>
-                            <td>{story.projectName}</td>
-                            <td>{story.clientName}</td>
+                    {stories.map((story, index) => (
+                        <tr key={index}>
+                            <td>{story.project_name || story.projectName}</td>
+                            <td>{story.client_name || story.clientName}</td>
                             <td>{story.industry}</td>
                         </tr>
                     ))}

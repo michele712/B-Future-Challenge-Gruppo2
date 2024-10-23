@@ -15,14 +15,14 @@ const App = () => {
                             <li><Link to="/">Dashboard</Link></li>
                             <li><Link to="/clients">Clienti</Link></li>
                             <li><Link to="/services">Servizi</Link></li>
-                            <li><Link to="/success-stories">Success Stories</Link></li>
+                            <li><Link to="/success-stories-view">Success Stories</Link></li>
                             <li><Link to="/business-units">Business Units</Link></li> {/* Aggiungi il link per Business Units */}
                         </ul>
                     </nav>
                 </header>
                 <main>
                     <AppRoutes />
-                    {/* Rimosso ClientProjects e BusinessUnits */}
+                 
                 </main>
                 <footer>
                     <p>© 2024 VarGroup</p>

@@ -14,7 +14,7 @@ const AppRoutes = () => {
             <Route path="/" element={<Dashboard />} />
             <Route path="/clients" element={<ClientList />} />
             <Route path="/services" element={<ServiceList />} />
-             <Route path="/success-stories" element={<SuccessStories />} />
+             <Route path="/success-stories-view" element={<SuccessStories />} />
             {/* Aggiungi qui la route per ClientProjects */}
             <Route path="/clients/:clientId/projects" element={<ClientProjects />} />
             {/* Aggiungi qui la route per Business Units */}
