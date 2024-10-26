@@ -612,3 +612,4 @@ async def get_success_stories_view():
     query = "SELECT * FROM v_success_stories"
     rows = await fetch_all(query)
     return [dict(row) for row in rows]
+
