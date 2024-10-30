@@ -7,6 +7,7 @@ const Chatbot = () => {
   ]);
 
   const [inputText, setInputText] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSendMessage = () => {
     if (!inputText.trim()) return;
@@ -24,29 +25,47 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbot-container">
-      <div className="chat-window">
-        <div className="chat-history">
-          {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`message ${msg.sender === 'bot' ? 'bot' : 'user'}`}
-            >
-              {msg.text}
+    <div>
+      {/* Chat Icon */}
+      <div className="chat-icon" onClick={() => setIsOpen(!isOpen)}>🗨</div>
+
+      {/* Chat Window */}
+      {isOpen && (
+        <div className="chatbot-container">
+          <div className="chat-window">
+
+            {/* Header */}
+            <div className="chat-header">
+              <span>Chatbot</span>
+              <button onClick={() => setIsOpen(false)}>⨯</button>
             </div>
-          ))}
-        </div>
-        <div className="input-area">
-          <input
-            type="text"
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            placeholder="Type your message..."
-            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-          />
+          
+            {/* History */}
+            <div className="chat-history">
+              {messages.map((msg, index) => (
+                <div 
+                  key={index}
+                  className={`message ${msg.sender === 'bot' ? 'bot' : 'user'}`}
+                >
+                  {msg.text}
+                </div>
+              ))}
+            </div>
+
+          {/* Input */}
+          <div className="input-area">
+            <input
+              type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              placeholder="Type your message..."
+              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+            />
           <button onClick={handleSendMessage}>Send</button>
+          </div>
         </div>
-      </div>
+      </div>
+    )}
     </div>
   );
 };
