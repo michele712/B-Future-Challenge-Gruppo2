@@ -3,10 +3,10 @@
   "build": {
     "builder": "NIXPACKS",
     "env": {
-      "PORT": "3000"  // Puoi impostare la porta se necessario
+      "PORT": "3000" 
     },
-    "pipfile": "Pipfile",  // Assicurati che esista se usi un Pipfile, altrimenti usa requirements.txt
-    "requirements": "requirements.txt"  // Indica il file requirements.txt se non usi un Pipfile
+    "pipfile": "Pipfile", 
+    "requirements": "requirements.txt"  
   },
   "deploy": {
     "runtime": "V2",
@@ -16,6 +16,6 @@
     "restartPolicyMaxRetries": 10
   },
   "start": {
-    "command": "uvicorn app:app --host 0.0.0.0 --port $PORT"  // Modifica 'app:app' con il tuo file/app
+    "command": "uvicorn app:app --host 0.0.0.0 --port $PORT"  
   }
 }
