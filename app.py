@@ -24,7 +24,7 @@ origins = [
 # Aggiungi il middleware CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Permetti tutte le origini, modifica se necessario
+    allow_origins=["*"]  # Permetti tutte le origini, modifica se necessario
     allow_credentials=True,
     allow_methods=["*"],  # Permetti tutti i metodi (GET, POST, etc.)
     allow_headers=["*"],  # Permetti tutte le intestazioni
