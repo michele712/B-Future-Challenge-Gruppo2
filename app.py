@@ -15,6 +15,10 @@ async def get_db_connection():
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+origins = [
+    "https://b-future-challenge-gruppo2-nine.vercel.app", 
+]
+
 
 
 # Aggiungi il middleware CORS
