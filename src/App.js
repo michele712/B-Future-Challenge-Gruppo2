@@ -11,7 +11,7 @@ const App = () => {
         <Router>
             <div className="app-container">
                 <header>
-                    <h1>Gestione Aziendale</h1>
+                    <h1>SynergyHub</h1>
                     <Navigation />
                 </header>
                 
