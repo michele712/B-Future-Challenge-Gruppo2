@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://official-hedwig-airoleplaychat-36373dad.koyeb.app/';
+const API_URL = 'https://b-future-challenge-gruppo2-3.onrender.com'';
  // Sostituisci con l'URL della tua API
 
 // Funzioni per le Business Units
