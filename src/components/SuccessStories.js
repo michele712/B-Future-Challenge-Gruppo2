@@ -8,7 +8,7 @@ const SuccessStories = () => {
     useEffect(() => {
         const getSuccessStories = async () => {
             try {
-                const response = await fetch('https://official-hedwig-airoleplaychat-36373dad.koyeb.app/success-stories-view/');
+                const response = await fetch('https://b-future-challenge-gruppo2-3.onrender.com'/success-stories-view/');
                 
                 // Controlla che la risposta sia OK (status code 200)
                 if (!response.ok) {
