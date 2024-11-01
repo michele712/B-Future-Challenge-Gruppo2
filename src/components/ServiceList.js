@@ -9,7 +9,7 @@ const Services = () => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const response = await fetch('https://b-future-challenge-gruppo2-3.onrender.com/services/'); // Modifica l'URL in base alla tua API
+                const response = await fetch('https://official-hedwig-airoleplaychat-36373dad.koyeb.app/services/'); // Modifica l'URL in base alla tua API
 
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} - ${response.statusText}`);
