@@ -9,7 +9,7 @@ const BusinessUnits = () => {
     useEffect(() => {
         const fetchUnits = async () => {
             try {
-                const response = await fetch('https://b-future-challenge-gruppo2-3.onrender.com/business-units/'); // Modifica l'URL in base alla tua API
+                const response = await fetch('https://official-hedwig-airoleplaychat-36373dad.koyeb.app/business-units/'); 
 
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} - ${response.statusText}`);
