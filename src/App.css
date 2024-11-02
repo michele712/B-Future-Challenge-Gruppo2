@@ -6,6 +6,12 @@ body {
     padding: 0;
 }
 
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assicura che l'altezza minima sia quella della finestra */
+}
+
 header {
     background: #007BFF;
     color: white;
@@ -30,6 +36,7 @@ nav ul li a {
 }
 
 main {
+    flex: 1; /* Permette al contenuto principale di espandersi per occupare lo spazio rimanente */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -41,9 +48,10 @@ footer {
     padding: 10px;
     background: #333;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    position: fixed; /* Fissa il footer in fondo alla pagina */
+    bottom: 0; /* Posiziona in fondo alla pagina */
+    left: 0; /* Allinea a sinistra */
+    width: 100%; /* Assicura che il footer prenda tutta la larghezza */
 }
 
 .card {

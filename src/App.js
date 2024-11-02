@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { FaTachometerAlt, FaUsers, FaServicestack, FaStar, FaBuilding } from 'react-icons/fa'; // Importa le icone
 import Chatbot from './components/Chatbot';
 import AppRoutes from './components/AppRoutes';
 import './App.css';
@@ -8,9 +9,9 @@ import './App.css';
 const App = () => {
     return (
         <Router>
-            <div>
+            <div className="app-container">
                 <header>
-                    <h1>Gestione Aziendale</h1>
+                    <h1>SynergyHub</h1>
                     <Navigation />
                 </header>
                 
@@ -34,11 +35,31 @@ const App = () => {
 const Navigation = () => (
     <nav>
         <ul>
-            <li><Link to="/">Dashboard</Link></li>
-            <li><Link to="/clients">Clienti</Link></li>
-            <li><Link to="/services">Servizi</Link></li>
-            <li><Link to="/success-stories-view">Success Stories</Link></li>
-            <li><Link to="/business-units">Business Units</Link></li>
+            <li>
+                <Link to="/">
+                    <FaTachometerAlt /> Dashboard
+                </Link>
+            </li>
+            <li>
+                <Link to="/clients">
+                    <FaUsers /> Clienti
+                </Link>
+            </li>
+            <li>
+                <Link to="/services">
+                    <FaServicestack /> Servizi
+                </Link>
+            </li>
+            <li>
+                <Link to="/success-stories-view">
+                    <FaStar /> Success Stories
+                </Link>
+            </li>
+            <li>
+                <Link to="/business-units">
+                    <FaBuilding /> Business Units
+                </Link>
+            </li>
         </ul>
     </nav>
 );
